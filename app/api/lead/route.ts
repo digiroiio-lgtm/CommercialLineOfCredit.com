@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";
+const fields=["fundingAmount","timeInBusiness","monthlyRevenue","creditRange","industry","state","urgency","name","businessName","email","phone"] as const;
+export async function POST(request:Request){try{const body=await request.json();if(!body||typeof body!=="object")return NextResponse.json({ok:false},{status:400});const missing=fields.some(f=>{const v=(body as Record<string,unknown>)[f];return typeof v!=="string"||!v.trim();});if(missing)return NextResponse.json({ok:false,error:"Missing required fields."},{status:400});console.info("qualification_submission_received",{receivedAt:new Date().toISOString()});return NextResponse.json({ok:true});}catch{return NextResponse.json({ok:false},{status:400});}}
