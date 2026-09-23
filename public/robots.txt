@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /thank-you/
+
+Sitemap: https://commerciallineofcredit.com/sitemap.xml
