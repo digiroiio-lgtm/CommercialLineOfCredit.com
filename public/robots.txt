@@ -4,5 +4,6 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /thank-you/
+Disallow: /guides/thank-you/
 
 Sitemap: https://commerciallineofcredit.com/sitemap.xml
