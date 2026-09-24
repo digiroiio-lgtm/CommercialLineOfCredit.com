@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import AnalyticsHooks from "@/components/AnalyticsHooks";
 import SchemaOrg from "@/components/SchemaOrg";
+import MobileNav from "@/components/MobileNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://commerciallineofcredit.com"),
@@ -25,12 +26,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AnalyticsHooks />
         <header className="site-header">
           <div className="container header-inner">
+            <MobileNav />
             <Link className="brand" href="/">
               <strong>CLOC</strong>
               <span>Commercial Line of Credit</span>
             </Link>
             <nav>
-              <Link href="/rates/">Rates</Link>
+              <Link href="/interest-rates/">Rates</Link>
               <Link href="/requirements/">Requirements</Link>
               <Link href="/how-it-works/">How It Works</Link>
               <Link href="/guides/">Guides</Link>
@@ -49,8 +51,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span>CommercialLineOfCredit.com</span>
             </div>
             <p className="footer-disclosure">
-              CLOC / CommercialLineOfCredit.com is not a lender. Information is provided for educational purposes.
-              Financing availability, rates and terms depend on third-party providers and borrower eligibility.
+              CLOC / CommercialLineOfCredit.com is not a lender. Information is provided for
+              educational purposes only. Financing availability, rates and terms depend on
+              third-party providers and borrower eligibility.
             </p>
             <nav className="footer-links">
               <Link href="/about/">About</Link>
@@ -62,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/privacy/">Privacy</Link>
               <Link href="/terms/">Terms</Link>
             </nav>
+            <p className="footer-copy">© {new Date().getFullYear()} CommercialLineOfCredit.com. All rights reserved.</p>
           </div>
         </footer>
       </body>
