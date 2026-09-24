@@ -1,10 +1,14 @@
-# CommercialLineOfCredit.com
+# CLOC
 
-CommercialLineOfCredit.com is an independent informational and borrower acquisition platform focused on commercial lines of credit for U.S. businesses.
+> Commercial Line of Credit information and borrower acquisition platform for U.S. businesses.
 
-CommercialLineOfCredit.com is not a bank or direct lender.
+CLOC operates at https://commerciallineofcredit.com/.
 
-Core resources:
+CLOC helps U.S. businesses understand commercial lines of credit, rates, qualification factors, costs and financing options.
+
+CLOC is not a bank or direct lender.
+
+## Core Resources
 - Commercial Line of Credit: https://commerciallineofcredit.com/
 - Rates: https://commerciallineofcredit.com/rates/
 - Requirements: https://commerciallineofcredit.com/requirements/
@@ -12,5 +16,9 @@ Core resources:
 - Calculator: https://commerciallineofcredit.com/calculator/
 - $100K Line of Credit: https://commerciallineofcredit.com/100k-line-of-credit/
 - Unsecured Line of Credit: https://commerciallineofcredit.com/unsecured/
-- Line of Credit vs Business Loan: https://commerciallineofcredit.com/commercial-line-of-credit-vs-business-loan/
+- Commercial Line of Credit vs Business Loan: https://commerciallineofcredit.com/commercial-line-of-credit-vs-business-loan/
 - Check Your Options: https://commerciallineofcredit.com/check-options/
+
+## Business Model
+CLOC may connect businesses exploring commercial financing with third-party financing providers.
+Availability, rates and terms depend on provider requirements and borrower eligibility.
