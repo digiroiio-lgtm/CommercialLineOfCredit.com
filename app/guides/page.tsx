@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { guidePages } from "@/lib/guides";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Commercial Line of Credit Guides",
@@ -24,12 +25,7 @@ export default function GuidesIndex() {
   return (
     <section className="section">
       <div className="container narrow">
-        <nav className="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><Link href="/">Home</Link></li>
-            <li aria-current="page">Guides</li>
-          </ol>
-        </nav>
+        <Breadcrumbs items={[{ label: "Guides" }]} />
 
         <span className="eyebrow">CLOC · In-depth guides</span>
         <h1>Commercial Line of Credit Guides</h1>
