@@ -56,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               third-party providers and borrower eligibility.
             </p>
             <nav className="footer-links">
+              <Link href="/states/">States</Link>
+              <Link href="/industries/">Industries</Link>
               <Link href="/about/">About</Link>
               <Link href="/methodology/">Methodology</Link>
               <Link href="/editorial-policy/">Editorial Policy</Link>
