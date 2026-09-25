@@ -9,6 +9,8 @@ const NAV = [
   { label: "How It Works", href: "/how-it-works/" },
   { label: "Guides", href: "/guides/" },
   { label: "Calculator", href: "/calculator/" },
+  { label: "States", href: "/states/" },
+  { label: "Industries", href: "/industries/" },
 ];
 
 export default function MobileNav() {

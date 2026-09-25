@@ -29,7 +29,7 @@ export default function IndustriesIndex() {
               <h3>
                 <Link href={`/industries/${slug}/`}>{page.name}</Link>
               </h3>
-              <p>{page.intro.slice(0, 140)}{page.intro.length > 140 ? "…" : ""}</p>
+              <p>{page.intro.length > 140 ? page.intro.slice(0, page.intro.lastIndexOf(" ", 140)) + "…" : page.intro}</p>
               <Link href={`/industries/${slug}/`} className="guide-read-more">
                 Read industry guide →
               </Link>

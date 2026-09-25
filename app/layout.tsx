@@ -37,6 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/how-it-works/">How It Works</Link>
               <Link href="/guides/">Guides</Link>
               <Link href="/calculator/">Calculator</Link>
+              <Link href="/states/">States</Link>
+              <Link href="/industries/">Industries</Link>
               <Link className="nav-cta" href="/check-options/" data-track="cta_click">
                 Check Options
               </Link>

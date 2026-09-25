@@ -2,7 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { statePages, stateSlugs } from "@/lib/states";
+import { industryPages } from "@/lib/industries";
 import Breadcrumbs from "@/components/Breadcrumbs";
+
+const INDUSTRY_SLUG_MAP: Record<string, string> = {
+  "manufacturing": "manufacturing",
+  "healthcare": "healthcare",
+  "construction": "construction",
+  "technology": "technology",
+  "agriculture": "agriculture",
+  "retail": "retail",
+  "professional services": "professional-services",
+  "transportation": "transportation",
+  "wholesale": "wholesale",
+  "staffing": "staffing",
+  "food and beverage": "food-and-beverage",
+  "food & beverage": "food-and-beverage",
+  "real estate": "real-estate",
+};
+
+function industrySlug(name: string): string | null {
+  const slug = INDUSTRY_SLUG_MAP[name.toLowerCase()] ?? null;
+  return slug && industryPages[slug] ? slug : null;
+}
 
 export const dynamicParams = false;
 
@@ -76,13 +98,20 @@ export default async function StatePage({
             <p>
               The leading industries in {page.name} that commonly use commercial lines of credit
               include{" "}
-              {page.topIndustries.map((ind, i) => (
-                <span key={i}>
-                  {i > 0 && i < page.topIndustries.length - 1 ? ", " : ""}
-                  {i === page.topIndustries.length - 1 && i > 0 ? ", and " : ""}
-                  <strong>{ind}</strong>
-                </span>
-              ))}
+              {page.topIndustries.map((ind, i) => {
+                const slug = industrySlug(ind);
+                return (
+                  <span key={i}>
+                    {i > 0 && i < page.topIndustries.length - 1 ? ", " : ""}
+                    {i === page.topIndustries.length - 1 && i > 0 ? ", and " : ""}
+                    {slug ? (
+                      <Link href={`/industries/${slug}/`}><strong>{ind}</strong></Link>
+                    ) : (
+                      <strong>{ind}</strong>
+                    )}
+                  </span>
+                );
+              })}
               . Each has distinct cash flow patterns and working capital needs that a revolving
               credit line can address.
             </p>
