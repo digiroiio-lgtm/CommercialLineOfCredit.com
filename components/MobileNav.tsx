@@ -3,14 +3,23 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NAV = [
-  { label: "Rates & Costs", href: "/interest-rates/" },
-  { label: "Requirements", href: "/requirements/" },
-  { label: "How It Works", href: "/how-it-works/" },
-  { label: "Guides", href: "/guides/" },
-  { label: "Calculator", href: "/calculator/" },
-  { label: "States", href: "/states/" },
-  { label: "Industries", href: "/industries/" },
+const NAV_GROUPS = [
+  {
+    items: [
+      { label: "Rates & Costs", href: "/interest-rates/" },
+      { label: "Requirements", href: "/requirements/" },
+      { label: "How It Works", href: "/how-it-works/" },
+      { label: "Calculator", href: "/calculator/" },
+      { label: "Guides", href: "/guides/" },
+    ],
+  },
+  {
+    label: "Explore",
+    items: [
+      { label: "By State", href: "/states/" },
+      { label: "By Industry", href: "/industries/" },
+    ],
+  },
 ];
 
 export default function MobileNav() {
@@ -47,10 +56,20 @@ export default function MobileNav() {
       {open && (
         <div className="mobile-overlay" role="dialog" aria-label="Navigation menu">
           <nav className="mobile-nav">
-            {NAV.map(({ label, href }) => (
-              <Link key={href} href={href} className="mobile-nav-item">
-                {label}
-              </Link>
+            {NAV_GROUPS.map((group, gi) => (
+              <div key={gi}>
+                {gi > 0 && <div className="mobile-nav-divider" />}
+                {group.label && (
+                  <span style={{ display: "block", fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".08em", color: "var(--muted)", padding: "8px 20px 4px" }}>
+                    {group.label}
+                  </span>
+                )}
+                {group.items.map(({ label, href }) => (
+                  <Link key={href} href={href} className="mobile-nav-item">
+                    {label}
+                  </Link>
+                ))}
+              </div>
             ))}
             <div className="mobile-nav-divider" />
             <Link href="/check-options/" className="mobile-nav-cta" data-track="cta_click">
