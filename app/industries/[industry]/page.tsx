@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { industryPages, industrySlugs } from "@/lib/industries";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQ from "@/components/FAQ";
+import SchemaOrg from "@/components/SchemaOrg";
 
 export const dynamicParams = false;
 
@@ -36,6 +38,7 @@ export default async function IndustryPage({
 
   return (
     <>
+      <SchemaOrg type="article" title={page.title} url={`https://commerciallineofcredit.com/industries/${industry}/`} />
       <section className="section">
         <div className="container narrow">
           <Breadcrumbs items={[{ label: "Industries", href: "/industries/" }, { label: page.name }]} />
@@ -65,15 +68,7 @@ export default async function IndustryPage({
               <p>{page.lenderCriteria}</p>
             </div>
 
-            <h2 style={{ marginTop: "2rem" }}>Frequently Asked Questions</h2>
-            <div className="faq">
-              {page.faq.map(({ q, a }, i) => (
-                <div key={i} className="faq-item">
-                  <p className="faq-q">{q}</p>
-                  <p className="faq-a">{a}</p>
-                </div>
-              ))}
-            </div>
+            <FAQ items={page.faq} />
           </div>
 
           <div className="panel" style={{ marginTop: "3rem" }}>
